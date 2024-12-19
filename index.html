@@ -34,3 +34,480 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
+            max-width: none;
+            width: 100%;
+        }
+
+        button {
+            background-color: #f2f2f7;
+            border: none;
+            color: #000000;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
+        }
+
+        button:active {
+            background-color: #e5e5ea;
+            transform: scale(0.98);
+        }
+
+        .frequency {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .label {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .playing {
+            background-color: #e5e5ea;
+            box-shadow: 0 0 0 2px #007aff;
+        }
+
+        .section-label {
+            width: 100%;
+            max-width: none;
+            color: #666666;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        .waveform-controls {
+            width: 100%;
+            max-width: none;
+            background-color: #f2f2f7;
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wave-buttons {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .wave-btn {
+            flex: 1;
+            background-color: #e5e5ea;
+            border: none;
+            color: #000000;
+            padding: 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wave-btn svg {
+            width: 24px;
+            height: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .wave-btn.active {
+            transform: scale(0.98);
+        }
+
+        #sine.wave-btn.active {
+            background-color: #ffd60a;
+        }
+
+        #square.wave-btn.active {
+            background-color: #ff9f0a;
+        }
+
+        #sawtooth.wave-btn.active {
+            background-color: #64d2ff;
+        }
+
+        #triangle.wave-btn.active {
+            background-color: #bf5af2;
+        }
+
+        .volume-controls {
+            width: 100%;
+            max-width: none;
+            background-color: #f2f2f7;
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .volume-label {
+            color: #86868b;
+            font-size: 17px;
+        }
+
+        .volume-buttons {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+        }
+
+        .volume-btn {
+            flex: 1;
+            background-color: #e5e5ea;
+            border: none;
+            color: #000000;
+            padding: 12px 0;
+            border-radius: 15px;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .volume-btn.active[data-volume="low"] {
+            background-color: #32d74b;
+            color: #ffffff;
+        }
+
+        .volume-btn.active[data-volume="mid"] {
+            background-color: #ffd60a;
+            color: #000000;
+        }
+
+        .volume-btn.active[data-volume="high"] {
+            background-color: #ff453a;
+            color: #ffffff;
+        }
+
+        .warning {
+            color: #ff3b30;
+            font-size: 12px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: none;
+        }
+
+        .disclaimer {
+            color: #666666;
+            font-size: 11px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: none;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 480px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
+            .volume-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Add these media queries to improve iPhone responsiveness */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .tone-generator-container {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .button-grid {
+                grid-template-columns: 1fr;  /* Single column on mobile */
+                gap: 10px;
+            }
+
+            button {
+                min-width: 0;  /* Remove min-width constraint */
+                width: 100%;
+                padding: 15px;
+            }
+
+            .frequency {
+                font-size: 18px;
+            }
+
+            .label {
+                font-size: 13px;
+            }
+
+            .waveform-controls,
+            .volume-controls {
+                padding: 12px 15px;
+                margin-bottom: 15px;
+            }
+
+            .wave-buttons {
+                gap: 8px;
+            }
+
+            .wave-btn {
+                padding: 12px;
+            }
+
+            .wave-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .volume-buttons {
+                flex-direction: row;  /* Keep buttons in a row */
+                gap: 8px;
+            }
+
+            .volume-btn {
+                padding: 10px 0;
+                font-size: 15px;
+            }
+
+            .volume-label {
+                font-size: 15px;
+            }
+
+            .warning,
+            .disclaimer {
+                font-size: 11px;
+                padding: 0 10px;
+            }
+        }
+
+        /* Add iPhone-specific safe area handling */
+        @supports (padding: max(0px)) {
+            body {
+                padding-left: max(10px, env(safe-area-inset-left));
+                padding-right: max(10px, env(safe-area-inset-right));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+        }
+
+        /* Add touch optimization for iOS */
+        @media (hover: none) and (pointer: coarse) {
+            button {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+
+            .wave-btn,
+            .volume-btn {
+                min-height: 44px; /* iOS minimum touch target size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tone-generator-container">
+        <h1>Tone Generator</h1>
+
+        <div class="waveform-controls">
+            <div class="wave-buttons">
+                <button id="sine" class="wave-btn active" onclick="setWaveform('sine', this)">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M2 16 C2 16, 8 4, 16 16 C24 28, 30 16, 30 16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button id="square" class="wave-btn" onclick="setWaveform('square', this)">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M2 16 H8 V4 H16 V28 H24 V16 H30" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button id="sawtooth" class="wave-btn" onclick="setWaveform('sawtooth', this)">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M2 16 L8 4 L8 28 L16 4 L16 28 L24 4 L24 28 L30 16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button id="triangle" class="wave-btn" onclick="setWaveform('triangle', this)">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M2 16 L8 4 L16 28 L24 4 L30 16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="volume-controls">
+            <span class="volume-label">Volume:</span>
+            <div class="volume-buttons">
+                <button class="volume-btn active" data-volume="low" onclick="setVolume(0.1, this)">Low</button>
+                <button class="volume-btn" data-volume="mid" onclick="setVolume(0.3, this)">Mid</button>
+                <button class="volume-btn" data-volume="high" onclick="setVolume(0.6, this)">High</button>
+            </div>
+        </div>
+
+        <div class="section-label">Bass Frequencies</div>
+        <div class="button-grid">
+            <button onpointerdown="startTone(20)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">20 Hz</span>
+                <span class="label">Sub Bass</span>
+            </button>
+            <button onpointerdown="startTone(50)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">50 Hz</span>
+                <span class="label">Deep Bass</span>
+            </button>
+            <button onpointerdown="startTone(60)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">60 Hz</span>
+                <span class="label">Bass</span>
+            </button>
+            <button onpointerdown="startTone(100)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">100 Hz</span>
+                <span class="label">Upper Bass</span>
+            </button>
+        </div>
+
+        <div class="section-label">Mid Range</div>
+        <div class="button-grid">
+            <button onpointerdown="startTone(220)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">220 Hz</span>
+                <span class="label">Low Mid</span>
+            </button>
+            <button onpointerdown="startTone(500)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">500 Hz</span>
+                <span class="label">Mid Range</span>
+            </button>
+            <button onpointerdown="startTone(1000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">1000 Hz</span>
+                <span class="label">High Mid</span>
+            </button>
+            <button onpointerdown="startTone(2500)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">2500 Hz</span>
+                <span class="label">Upper Mid</span>
+            </button>
+        </div>
+
+        <div class="section-label">High Range</div>
+        <div class="button-grid">
+            <button onpointerdown="startTone(3500)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">3500 Hz</span>
+                <span class="label">Presence</span>
+            </button>
+            <button onpointerdown="startTone(5000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">5000 Hz</span>
+                <span class="label">Brilliance</span>
+            </button>
+            <button onpointerdown="startTone(7500)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">7500 Hz</span>
+                <span class="label">Shimmer</span>
+            </button>
+            <button onpointerdown="startTone(10000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">10000 Hz</span>
+                <span class="label">Air</span>
+            </button>
+        </div>
+
+        <div class="section-label">Ultrasonic</div>
+        <div class="button-grid">
+            <button onpointerdown="startTone(15000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">15000 Hz</span>
+                <span class="label">Near Ultra</span>
+            </button>
+            <button onpointerdown="startTone(17000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">17000 Hz</span>
+                <span class="label">Ultra Low</span>
+            </button>
+            <button onpointerdown="startTone(19000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">19000 Hz</span>
+                <span class="label">Ultra Mid</span>
+            </button>
+            <button onpointerdown="startTone(20000)" onpointerup="stopTone()" onpointerleave="stopTone()">
+                <span class="frequency">20000 Hz</span>
+                <span class="label">Ultra High</span>
+            </button>
+        </div>
+
+        <p class="warning">Note: Most mobile phone speakers cannot accurately reproduce very low bass frequencies or ultrasonic frequencies. Results may vary depending on your device.</p>
+
+        <p class="disclaimer">DISCLAIMER: By using this frequency generator, you acknowledge that you are using it at your own risk. The creators and providers of this tool are not liable for any damage to speakers, hearing, or other equipment that may result from its use. Please use responsibly and at safe volume levels to protect your hearing and equipment.</p>
+
+        <script>
+            let audioContext;
+            let oscillator;
+            let gainNode;
+            let currentVolume = 0.1;
+            let currentWaveform = 'sine';
+            
+            function initAudio() {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                gainNode = audioContext.createGain();
+                gainNode.connect(audioContext.destination);
+            }
+
+            function setWaveform(type, btn) {
+                currentWaveform = type;
+                // Update button states
+                document.querySelectorAll('.wave-btn').forEach(button => {
+                    button.classList.remove('active');
+                });
+                btn.classList.add('active');
+                
+                // Update current oscillator if it exists
+                if (oscillator) {
+                    oscillator.type = currentWaveform;
+                }
+            }
+
+            function setVolume(value, btn) {
+                currentVolume = value;
+                if (gainNode) {
+                    gainNode.gain.value = currentVolume;
+                }
+                // Update button states
+                document.querySelectorAll('.volume-btn').forEach(button => {
+                    button.classList.remove('active');
+                });
+                btn.classList.add('active');
+            }
+
+            function startTone(frequency) {
+                if (!audioContext) initAudio();
+                
+                if (oscillator) stopTone();
+                
+                oscillator = audioContext.createOscillator();
+                oscillator.type = currentWaveform;
+                oscillator.frequency.value = frequency;
+                
+                gainNode.gain.value = currentVolume;
+                
+                oscillator.connect(gainNode);
+                oscillator.start();
+                
+                // Add visual feedback
+                event.target.classList.add('playing');
+            }
+
+            function stopTone() {
+                if (oscillator) {
+                    oscillator.stop();
+                    oscillator = null;
+                }
+                // Remove visual feedback
+                document.querySelectorAll('.playing').forEach(element => {
+                    element.classList.remove('playing');
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>
