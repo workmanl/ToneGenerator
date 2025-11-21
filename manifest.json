@@ -1,0 +1,18 @@
+{
+  "name": "Tone Generator",
+  "short_name": "ToneGen",
+  "description": "Professional tone generator with custom frequencies, waveform visualization, and multiple wave types",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007aff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%23007aff' width='512' height='512' rx='100'/><path d='M64 256 C64 256, 160 64, 256 256 C352 448, 448 256, 448 256' stroke='white' fill='none' stroke-width='40' stroke-linecap='round'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
