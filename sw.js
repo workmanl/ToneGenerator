@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tone-generator-v16';
+const CACHE_NAME = 'tone-generator-v20';
 const urlsToCache = [
   '/',
   '/index.html',

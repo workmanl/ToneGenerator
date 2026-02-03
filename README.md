@@ -1,11 +1,17 @@
 # Tone Generator
 
-A simple web-based tone generator that allows you to play pure tones at various frequencies using your browser's Web Audio API.
+A sleek, web-based tone generator for precision listening, calibration, and sweep testing using the Web Audio API.
 
 ## Features
 
-- **Multiple Waveforms**: Choose from sine, square, sawtooth, and triangle wave shapes
-- **Volume Control**: Three preset volume levels (Low, Mid, High)
+- **Multiple Waveforms**: Sine, square, sawtooth, and triangle
+- **Waveform Visualization**: Live signal display
+- **Volume Fader**: Vertical output control with max output cap
+- **Custom Frequency**: Slider + numeric input with instant play/stop
+- **Tone Pads**: Preset frequency banks across key ranges
+- **Sweep Generator**: Start, end, and duration controls
+- **Playback Safety**: Toggle/lock mode and auto-stop option
+- **Settings Panel**: Max output, fade time, auto-stop, repeat sweep
 - **Frequency Ranges**:
   - Bass Frequencies (20-100 Hz)
   - Mid Range (220-2500 Hz)
@@ -16,11 +22,11 @@ A simple web-based tone generator that allows you to play pure tones at various 
 
 ## How to Use
 
-1. Open `index.html` in any modern web browser
-2. Select your desired waveform (sine wave is selected by default)
-3. Choose a volume level
-4. Tap or click on any frequency button to start playing the tone
-5. Release the button to stop the tone
+1. Open `index.html` in any modern web browser (or run a local server for full PWA behavior)
+2. Select your waveform (sine is default)
+3. Set volume with the fader
+4. Tap a preset pad or use Custom Frequency + Play
+5. Optional: use Sweep, Toggle Mode, or Settings for advanced control
 
 ## Technical Details
 
@@ -28,6 +34,13 @@ A simple web-based tone generator that allows you to play pure tones at various 
 - Uses the Web Audio API for audio generation
 - No external dependencies or frameworks required
 - Single HTML file for easy deployment
+## Local Development
+
+You can open the file directly, but a local server is recommended for service worker/PWA testing:
+
+```sh
+python3 -m http.server 8000
+```
 
 ## Browser Compatibility
 
